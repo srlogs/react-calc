@@ -7,10 +7,10 @@
 }
 
 body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fbb034;
-  background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(153, 201, 185);
+    background-image: linear-gradient(315deg, #91ef7c 0%, #f6e36c 74%);
 }
