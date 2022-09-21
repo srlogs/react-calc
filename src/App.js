@@ -20,14 +20,20 @@ const App = () => {
     display: "",
   });
 
+  const updateDisplay = (value) => {
+    console.log("update display called ", value);
+    if (calc.display === "") {
+      return value;
+    }
+    return calc.display + String(value);
+  };
+
   const numClickHandler = (value) => {
     setCalc({
       ...calc,
       num: calc.num !== 0 ? Number(String(calc.num) + value) : value,
       res: !calc.sign ? 0 : calc.res,
-      display: String(
-        calc.num !== 0 ? Number(String(calc.num) + value) : calc.display + value
-      ),
+      display: updateDisplay(value),
     });
   };
 
@@ -106,7 +112,7 @@ const App = () => {
 
   return (
     <Wrapper>
-      <Screen value={calc.display ? calc.display :0}></Screen>
+      <Screen value={calc.display ? calc.display : 0}></Screen>
       <ButtonWrapper>
         {btnValues.flat().map((btn, i) => {
           return (
@@ -127,7 +133,7 @@ const App = () => {
                   btn === "-"
                 )
                   signClickHandler(btn);
-                else numClickHandler(btn);
+                  else numClickHandler(btn);
               }}
             />
           );
